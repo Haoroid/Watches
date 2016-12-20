@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -25,19 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.easydropdown.js"></script>	
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
-<div class="breadcrumbs">
-		<div class="container">
-			<div class="breadcrumbs-main">
-				<ol class="breadcrumb">
-					<li><a href="index.jsp">首页</a></li>
-					<li class="active">注册</li>
-				</ol>
-			</div>
-		</div>
-	</div>
-	<!--end-breadcrumbs-->
-	<!--register-starts-->
+
 	<div class="register">
 		<div class="container">
 			<div class="register-top heading">

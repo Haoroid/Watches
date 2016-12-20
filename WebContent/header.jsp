@@ -56,7 +56,7 @@
 				<div class="col-md-9 header-left">
 				<div class="top-nav">
 					<ul class="memenu skyblue"><li class="active"><a href="index.jsp">首页</a></li>
-						<li class="grid"><a href="#">男士</a></li>
+						<li class="grid"><a href="products.jsp">男士</a></li>
 						<li class="grid"><a href="#">女士</a></li>
 						<li class="grid"><a href="#">儿童</a></li>
 						<li class="grid"><a href="typo.jsp">Blog</a></li>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -106,7 +106,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="product-one">
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-1.png" alt="" /></a>
+							<a href="single.jsp" class="mask"><img class="img-responsive zoom-img" src="images/p-1.png" alt="" /></a>
+							<div class="product-bottom">
+								<h3>Smart Watches</h3>
+								<p>Explore Now</p>
+								<h4><a class="item_add" href="single.jsp"><i></i></a> <span class=" item_price">$ 329</span></h4>
+							</div>
+							<div class="srch">
+								<span>-50%</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-left">
+						<div class="product-main simpleCart_shelfItem">
+							<a href="single.jsp" class="mask"><img class="img-responsive zoom-img" src="images/p-2.png" alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>
@@ -119,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-2.png" alt="" /></a>
+							<a href="single.jsp" class="mask"><img class="img-responsive zoom-img" src="images/p-3.png"  alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>
@@ -132,20 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-3.png"  alt="" /></a>
-							<div class="product-bottom">
-								<h3>Smart Watches</h3>
-								<p>Explore Now</p>
-								<h4><a class="item_add" href="#"><i></i></a> <span class=" item_price">$ 329</span></h4>
-							</div>
-							<div class="srch">
-								<span>-50%</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 product-left">
-						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-4.png" alt="" /></a>
+							<a href="single.jsp" class="mask"><img class="img-responsive zoom-img" src="images/p-4.png" alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>
@@ -161,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="product-one">
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-5.png" alt="" /></a>
+							<a href="single.jsp" class="mask"><img class="img-responsive zoom-img" src="images/p-5.png" alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>
@@ -174,7 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-6.png" alt="" /></a>
+							<a href="single.jsp" class="mask"><img class="img-responsive zoom-img" src="images/p-6.png" alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>
@@ -187,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-7.png" alt="" /></a>
+							<a href="single.jsp" class="mask"><img class="img-responsive zoom-img" src="images/p-7.png" alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>
@@ -200,7 +200,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-8.png" alt="" /></a>
+							<a href="single.jsp" class="mask"><img class="img-responsive zoom-img" src="images/p-8.png" alt="" /></a>
 							<div class="product-bottom">
 								<h3>Smart Watches</h3>
 								<p>Explore Now</p>
