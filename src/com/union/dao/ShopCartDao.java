@@ -1,4 +1,4 @@
-package com.union.service;
+package com.union.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -6,8 +6,7 @@ import java.util.List;
 import com.union.model.Goods;
 import com.union.model.ShopCart;
 
-public interface ShopCartService {
-
+public interface ShopCartDao {
 
 	/**
 	 * 添加商品至购物车
@@ -27,6 +26,4 @@ public interface ShopCartService {
 	 * @return
 	 */
 	List<ShopCart> showShopCart(int userId);
-	
-	
 }

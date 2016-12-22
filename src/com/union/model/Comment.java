@@ -1,8 +1,8 @@
 package com.union.model;
 
-public class CommentMsg {
+public class Comment {
 
-	
+	private int id;
 	private String message;
 	private String time;
 	private String phone;
@@ -37,6 +37,12 @@ public class CommentMsg {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

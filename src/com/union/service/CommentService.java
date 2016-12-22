@@ -1,6 +1,6 @@
 package com.union.service;
 
-import com.union.model.CommentMsg;
+import com.union.model.Comment;
 
 public interface CommentService {
 
@@ -9,5 +9,5 @@ public interface CommentService {
 	 * @param message
 	 * @return
 	 */
-	boolean sendCommentMsg(CommentMsg message);
+	boolean sendComment(Comment message);
 }

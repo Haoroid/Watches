@@ -22,4 +22,18 @@ public interface GoodsService {
 	 * @return
 	 */
 	Goods selectGoods(Serializable id);
+	
+	/**
+	 * 通过tag标识进行商品分类
+	 * @param tag
+	 * @return
+	 */
+	List<Goods> searchGoods(Serializable tag);
+	
+	/**
+	 * 通过tag标识进行商品分类
+	 * @param tag
+	 * @return
+	 */
+	List<Goods> categoryGoods(Serializable tag);
 }

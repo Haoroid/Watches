@@ -1,12 +1,14 @@
-package com.union.service;
+package com.union.dao;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.union.model.Order;
 
-public interface OrderService {
+public interface OrderDao {
 
+	
 	/**
 	 * 查看订单
 	 * @param id
@@ -18,15 +20,12 @@ public interface OrderService {
 	 * @param order
 	 * @return
 	 */
-	boolean commitOrder(Order order);
+	boolean commitOrder(Order order) ;
 	/**
 	 * 取消订单
 	 * @param id
 	 * @return
 	 */
 	boolean cancelOrder(Serializable id);
-	
-	
-	
 	
 }
