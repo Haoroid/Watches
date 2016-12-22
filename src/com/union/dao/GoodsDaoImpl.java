@@ -1,5 +1,137 @@
 package com.union.dao;
 
-public class GoodsDaoImpl {
+import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.union.model.Goods;
+import com.union.utils.DBUtils;
+
+public class GoodsDaoImpl implements GoodsDao{
+
+	Connection connection = null;
+	
+	public GoodsDaoImpl(Connection connection) {
+		this.connection  = connection;
+		
+	}
+	
+	
+	@Override
+	public List<Goods> showAllGoods() {
+		
+		String sql = "select * from T_GOODS";
+		List<Goods> goodsList = new ArrayList<>();
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			stmt = connection.createStatement();
+			rs = stmt.executeQuery(sql);
+			if(rs.next())
+			{
+				Goods goods = new Goods();
+				goods.setColor(rs.getString("COLOR"));
+				goods.setDescription(rs.getString("DESCRIPTION"));
+				goods.setGoodsNum(rs.getInt("GOODSNUM"));
+				goods.setDiscount(rs.getString("DISCOUNT"));
+				goods.setId(rs.getInt("ID"));
+				goods.setName(rs.getString("NAME"));
+				goods.setPicture(rs.getString("PICTURE"));
+				goods.setPrice(rs.getString("PRICE"));
+				goods.setType(rs.getString("TYPE"));
+				goods.setGoodsSize(rs.getString("GOODSSIZE"));
+				goodsList.add(goods);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			DBUtils.closeStatement(rs, stmt);
+		}
+		
+		return goodsList;
+	}
+
+	@Override
+	public Goods selectGoods(Serializable id) {
+		String sql = "select * from T_GOODS where id = "+ id;
+		Goods goods = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			stmt = connection.createStatement();
+			rs = stmt.executeQuery(sql);
+			if(rs.next())
+			{
+				goods = new Goods();
+				goods.setColor(rs.getString("COLOR"));
+				goods.setDescription(rs.getString("DESCRIPTION"));
+				goods.setGoodsNum(rs.getInt("GOODSNUM"));
+				goods.setDiscount(rs.getString("DISCOUNT"));
+				goods.setId(rs.getInt("ID"));
+				goods.setName(rs.getString("NAME"));
+				goods.setPicture(rs.getString("PICTURE"));
+				goods.setPrice(rs.getString("PRICE"));
+				goods.setType(rs.getString("TYPE"));
+				goods.setGoodsSize(rs.getString("GOODSSIZE"));
+				
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			DBUtils.closeStatement(rs, stmt);
+		}
+		
+		return goods;
+	}
+
+	@Override
+	public List<Goods> searchGoods(Serializable tag) {
+		String sql = null;
+		switch (tag.toString()) {
+		case "type":
+			sql = "select * from T_GOODS where type = "+tag;
+			break;
+		case "name":
+			sql = "select * from T_GOODS where name = "+tag;
+			break;
+		default:
+			break;
+		}
+		List<Goods> goodsList = new ArrayList<>();
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			stmt = connection.createStatement();
+			rs = stmt.executeQuery(sql);
+			if(rs.next())
+			{
+				Goods goods = new Goods();
+				goods.setColor(rs.getString("COLOR"));
+				goods.setDescription(rs.getString("DESCRIPTION"));
+				goods.setGoodsNum(rs.getInt("GOODSNUM"));
+				goods.setDiscount(rs.getString("DISCOUNT"));
+				goods.setId(rs.getInt("ID"));
+				goods.setName(rs.getString("NAME"));
+				goods.setPicture(rs.getString("PICTURE"));
+				goods.setPrice(rs.getString("PRICE"));
+				goods.setType(rs.getString("TYPE"));
+				goods.setGoodsSize(rs.getString("GOODSSIZE"));
+				goodsList.add(goods);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			DBUtils.closeStatement(rs, stmt);
+		}
+		
+		return goodsList;
+	}
 
 }

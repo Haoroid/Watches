@@ -19,4 +19,10 @@ public class GoodsServiceImpl implements GoodsService {
 		return null;
 	}
 
+	@Override
+	public List<Goods> searchGoods(Serializable tag) {
+		
+		return null;
+	}
+
 }
