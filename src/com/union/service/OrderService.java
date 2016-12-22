@@ -18,13 +18,15 @@ public interface OrderService {
 	 * @param order
 	 * @return
 	 */
-	Order commitOrder(Order order);
+	boolean commitOrder(Order order);
 	/**
 	 * 取消订单
 	 * @param id
 	 * @return
 	 */
 	boolean cancelOrder(Serializable id);
+	
+	
 	
 	
 }

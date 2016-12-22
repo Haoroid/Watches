@@ -4,21 +4,29 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.union.model.Goods;
+import com.union.model.ShopCart;
 
 public interface ShopCartService {
+
 
 	/**
 	 * 添加商品至购物车
 	 * @param goods
 	 * @return
 	 */
-	List<Goods> addShopCart(Goods goods);
+	boolean addShopCart(ShopCart shopCart);
 	/**
 	 * 从购物车中移除商品
 	 * @param id
 	 * @return
 	 */
-	List<Goods> removeShopCart(Serializable id);
+	boolean removeShopCart(int id);
+	
+	/**
+	 * 显示购物车
+	 * @return
+	 */
+	List<ShopCart> showShopCart(int userId);
 	
 	
 }
