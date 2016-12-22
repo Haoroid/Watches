@@ -59,7 +59,7 @@
 					</form>
 				</div>
 				<div class="col-md-6 footer-right">					
-					<p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://www.neusoft.com/">东软</a></p>
+					<p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="manager_login.jsp">后台管理</a></p>
 				</div>
 				<div class="clearfix"></div>
 			</div>
