@@ -8,9 +8,9 @@ public class Goods {
 	private String price;
 	private String picture;
 	private String color;
-	private String size;
+	private String goodsSize;
 	private String type;
-	private int number;
+	private int goodsNum;
 	private String discount;
 	private String description;//商品简介
 	public int getId() {
@@ -43,12 +43,7 @@ public class Goods {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	public String getSize() {
-		return size;
-	}
-	public void setSize(String size) {
-		this.size = size;
-	}
+	
 	public String getType() {
 		return type;
 	}
@@ -62,33 +57,40 @@ public class Goods {
 		this.discount = discount;
 	}
 	public Goods(int id, String name, String price, String picture,
-			String color, String size, String type, String discount,int number) {
+			String color, String goodsSize, String type, String discount,int goodsNum) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.picture = picture;
 		this.color = color;
-		this.size = size;
+		this.setGoodsSize(goodsSize);
 		this.type = type;
 		this.discount = discount;
-		this.number = number;
+		this.setGoodsNum(goodsNum);
 	}
 	public Goods() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public int getNumber() {
-		return number;
-	}
-	public void setNumber(int number) {
-		this.number = number;
-	}
+
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public int getGoodsNum() {
+		return goodsNum;
+	}
+	public void setGoodsNum(int goodsNum) {
+		this.goodsNum = goodsNum;
+	}
+	public String getGoodsSize() {
+		return goodsSize;
+	}
+	public void setGoodsSize(String goodsSize) {
+		this.goodsSize = goodsSize;
 	}
 	
 	

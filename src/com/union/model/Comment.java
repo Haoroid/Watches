@@ -1,6 +1,6 @@
 package com.union.model;
 
-public class CommentMsg {
+public class Comment {
 
 	
 	private String message;
