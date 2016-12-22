@@ -16,19 +16,19 @@ public interface ManagerGoodsService {
 	 * @param goods
 	 * @return
 	 */
-	List<Goods> addGoods(Goods goods);
+	boolean addGoods(Goods goods);
 	/**
 	 * 删除某个商品
 	 * @param id
 	 * @return
 	 */
-	List<Goods> removeGoods(Serializable id);
+	boolean removeGoods(int id);
 	/**
 	 * 查询某个商品
 	 * @param id
 	 * @return
 	 */
-	Goods selectGoods(Serializable id);
+	Goods selectGoods(int id);
 	
 	/**
 	 * 修改某个商品

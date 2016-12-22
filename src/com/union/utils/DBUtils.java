@@ -56,16 +56,14 @@ public class DBUtils {
 	 * 提交事务
 	 * 
 	 * @param conn
+	 * @throws SQLException 
 	 */
-	public static void commit(Connection conn) {
+	public static void commit(Connection conn) throws SQLException {
 
-		try {
+		
 			conn.commit();
 			conn.setAutoCommit(true);
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
+		
 	}
 
 	/**

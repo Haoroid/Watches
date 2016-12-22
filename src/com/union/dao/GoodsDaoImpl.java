@@ -2,6 +2,7 @@ package com.union.dao;
 
 import java.io.Serializable;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,7 +15,7 @@ import com.union.utils.DBUtils;
 public class GoodsDaoImpl implements GoodsDao{
 
 	Connection connection = null;
-	
+	private static final String SELECT_GOODS = "SELECT * FROM T_GOODS";
 	public GoodsDaoImpl(Connection connection) {
 		this.connection  = connection;
 		
@@ -22,15 +23,15 @@ public class GoodsDaoImpl implements GoodsDao{
 	
 	
 	@Override
-	public List<Goods> showAllGoods() {
+	public List<Goods> showAllGoods() throws SQLException {
 		
-		String sql = "select * from T_GOODS";
+		
 		List<Goods> goodsList = new ArrayList<>();
-		Statement stmt = null;
+		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			stmt = connection.createStatement();
-			rs = stmt.executeQuery(sql);
+			pstmt = connection.prepareStatement(SELECT_GOODS);
+			rs = pstmt.executeQuery();
 			if(rs.next())
 			{
 				Goods goods = new Goods();
@@ -47,17 +48,15 @@ public class GoodsDaoImpl implements GoodsDao{
 				goodsList.add(goods);
 				
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally{
-			DBUtils.closeStatement(rs, stmt);
+		} finally{
+			DBUtils.closeStatement(rs, pstmt);
 		}
 		
 		return goodsList;
 	}
 
 	@Override
-	public Goods selectGoods(Serializable id) {
+	public Goods selectGoods(Serializable id) throws SQLException{
 		String sql = "select * from T_GOODS where id = "+ id;
 		Goods goods = null;
 		Statement stmt = null;
@@ -91,7 +90,7 @@ public class GoodsDaoImpl implements GoodsDao{
 	}
 
 	@Override
-	public List<Goods> searchGoods(Serializable tag) {
+	public List<Goods> searchGoods(Serializable tag) throws SQLException{
 		String sql = null;
 		switch (tag.toString()) {
 		case "type":

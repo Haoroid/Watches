@@ -8,6 +8,7 @@ public class Order {
 	private String commitTime;
 	private String address;
 	private String status;
+	private int shopCartId;
 	private int goodsId;
 	public int getId() {
 		return id;
@@ -64,6 +65,12 @@ public class Order {
 	}
 	public void setGoodsId(int goodsId) {
 		this.goodsId = goodsId;
+	}
+	public int getShopCartId() {
+		return shopCartId;
+	}
+	public void setShopCartId(int shopCartId) {
+		this.shopCartId = shopCartId;
 	}
 	
 }
