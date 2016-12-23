@@ -74,6 +74,25 @@ public class ShopCartServiceImpl implements ShopCartService {
 		}
 		return shopCartList;
 	}
+	@Override
+	public List<ShopCart> showAllShopCart() {
+		Connection connection = null;
+		List<ShopCart> shopCartList = new ArrayList<>();
+		try {
+			 connection = DBUtils.getConnection();
+				ShopCartDao shopCartDao = new ShopCartDaoImpl(connection);
+				DBUtils.beginTransaction(connection);
+				shopCartList = shopCartDao.showAllShopCart();
+			DBUtils.commit(connection);
+		} catch (SQLException e) {
+			DBUtils.closeConnection(connection);
+		}
+		finally
+		{
+			DBUtils.closeConnection(connection);
+		}
+		return shopCartList;
+	}
 
 	
 }

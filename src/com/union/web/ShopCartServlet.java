@@ -10,14 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.union.model.Goods;
+import com.union.model.ShopCart;
 import com.union.service.GoodsService;
 import com.union.service.GoodsServiceImpl;
+import com.union.service.ShopCartService;
+import com.union.service.ShopCartServiceImpl;
 
-public class GoodsServlet extends HttpServlet {
+public class ShopCartServlet extends HttpServlet {
 
 	HttpServletRequest request = null;
 	 HttpServletResponse response = null;
-		GoodsService goodsService = new GoodsServiceImpl();
+	ShopCartService shopCartService = new ShopCartServiceImpl();
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -33,16 +36,22 @@ public class GoodsServlet extends HttpServlet {
 	}
 	}
 	
-	public void showAllGoods()
+	public void addShopCart()
+	{
+		//int 
+	}
+	
+	
+	public void showAllShopCart()
 	{
 	
-		List<Goods> goodsList = goodsService.showAllGoods();
+		List<ShopCart> shopCartList = shopCartService.showAllShopCart();
 		
-		request.setAttribute("goodsList", goodsList);
+		request.setAttribute("shopCartList", shopCartList);
 		
 
 		try {
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/contact.jsp").forward(request, response);
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -52,23 +61,23 @@ public class GoodsServlet extends HttpServlet {
 		}
 	}
 	
-	public void showGoods()
-	{
-		int id = Integer.parseInt(request.getParameter("id"));
-		Goods goods = goodsService.selectGoods(id);
-		if(goods!=null)
-		{
-			request.setAttribute("goods", goods);
-			try {
-				request.getRequestDispatcher("/single.jsp").forward(request, response);
-			} catch (ServletException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-	}
+//	public void showGoods()
+//	{
+//		int id = Integer.parseInt(request.getParameter("id"));
+//		Goods goods = goodsService.selectGoods(id);
+//		if(goods!=null)
+//		{
+//			request.setAttribute("goods", goods);
+//			try {
+//				request.getRequestDispatcher("/single.jsp").forward(request, response);
+//			} catch (ServletException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//		
+//	}
 }

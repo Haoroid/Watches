@@ -20,7 +20,7 @@ public class ShopCartDaoImpl implements ShopCartDao {
 	private final static String INSERT_SHOPCART_GOODSID = "insert into T_SHOPCART(GOODSID,USERID) VALUES(?,?)"; 
 	private final static String DELETE_SHOPCART_GOODSID = "DELETE FROM T_SHOPCART WHERE ID = ?";
 	private final static String SELECT_SHOPCART = "SELECT * FROM SHOPCART WHERE USERID = ?";
-	
+	private final static String SELECT_ALL_SHOPCART = "SELECT * FROM SHOPCART";
 	
 	Connection connection = null;
 	public ShopCartDaoImpl(Connection connection) {
@@ -111,6 +111,38 @@ public class ShopCartDaoImpl implements ShopCartDao {
 			}
 			return shopCartList;
 		
+	}
+	@Override
+	public List<ShopCart> showAllShopCart() {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<ShopCart> shopCartList = new ArrayList<>();
+		
+		try {
+
+			pstmt = connection.prepareStatement(SELECT_ALL_SHOPCART);
+			rs = pstmt.executeQuery();
+			if(rs.next())
+			{
+				ShopCart  shopCart = new ShopCart();
+				shopCart.setId(rs.getInt("ID"));
+				shopCart.setGoodsId(rs.getInt("GOODSID"));
+				shopCart.setUserId(rs.getInt("USERID"));
+				shopCart.setName(rs.getString("NAME"));
+				shopCart.setPrice(rs.getString("PRICE"));
+				shopCartList.add(shopCart);
+			}
+			
+		
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally
+		{
+			DBUtils.closeStatement(rs, pstmt);
+		}
+		return shopCartList;
 	}
 
 }

@@ -112,7 +112,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="product-top">
 				<div class="product-one">
 				
-			<h1>	${goodsList }</h1>
 				
 				
 				
@@ -123,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 					<div class="col-md-3 product-left">
 						<div class="product-main simpleCart_shelfItem">
-							<a href="single.jsp" class="mask"><img class="img-responsive zoom-img" src="${goods.picture }" alt="" /></a>
+							<a href="goods/showGoods?id=${goods.id}" class="mask"><img class="img-responsive zoom-img" src="${goods.picture }" alt="" /></a>
 							<div class="product-bottom">
 								<h3>${goods.name }</h3>
 								<p>Explore Now</p>

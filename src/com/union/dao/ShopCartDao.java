@@ -26,4 +26,10 @@ public interface ShopCartDao {
 	 * @return
 	 */
 	List<ShopCart> showShopCart(int userId);
+	
+	/**
+	 * 显示购物车
+	 * @return
+	 */
+	List<ShopCart> showAllShopCart();
 }

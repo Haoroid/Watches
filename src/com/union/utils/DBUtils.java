@@ -14,11 +14,17 @@ import java.sql.Statement;
  */
 public class DBUtils {
 
-	private static final String driverName = "oracle.jdbc.OracleDriver";
-	private static final String url = "jdbc:oracle:thin:@192.168.1.105:1521:xe";
-	private static final String user = "sys as sysdba";
-	private static final String password = "haoroid";
+//	private static final String driverName = "oracle.jdbc.OracleDriver";
+//	private static final String url = "jdbc:oracle:thin:@192.168.1.105:1521:xe";
+//	private static final String user = "sys as sysdba";
+//	private static final String password = "haoroid";
 
+	
+	private static final String driverName = "com.mysql.jdbc.Driver";
+	private static final String url = "jdbc:mysql://localhost:3306/watches";
+	private static final String user = "root";
+	private static final String password = "root";
+	
 	/**
 	 * 获取数据库连接
 	 * 
