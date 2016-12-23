@@ -15,9 +15,9 @@ import java.sql.Statement;
 public class DBUtils {
 
 	private static final String driverName = "oracle.jdbc.OracleDriver";
-	private static final String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-	private static final String user = "Haoroid";
-	private static final String password = "Haoroid";
+	private static final String url = "jdbc:oracle:thin:@192.168.1.105:1521:xe";
+	private static final String user = "sys as sysdba";
+	private static final String password = "haoroid";
 
 	/**
 	 * 获取数据库连接

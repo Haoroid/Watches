@@ -32,11 +32,11 @@ public class GoodsDaoImpl implements GoodsDao{
 		try {
 			pstmt = connection.prepareStatement(SELECT_GOODS);
 			rs = pstmt.executeQuery();
-			if(rs.next())
+			while(rs.next())
 			{
 				Goods goods = new Goods();
 				goods.setColor(rs.getString("COLOR"));
-				goods.setDescription(rs.getString("DESCRIPTION"));
+				//goods.setDescription(rs.getString("DESCRIPTION"));
 				goods.setGoodsNum(rs.getInt("GOODSNUM"));
 				goods.setDiscount(rs.getString("DISCOUNT"));
 				goods.setId(rs.getInt("ID"));
