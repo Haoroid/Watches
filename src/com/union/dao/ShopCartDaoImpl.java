@@ -17,10 +17,10 @@ import com.union.utils.DBUtils;
 public class ShopCartDaoImpl implements ShopCartDao {
 
 	
-	private final static String INSERT_SHOPCART_GOODSID = "insert into T_SHOPCART(GOODSID,USERID) VALUES(?,?)"; 
+	private final static String INSERT_SHOPCART_GOODSID = "insert into T_SHOPCART(GOODSID,USERID,NAME,PRICE) VALUES(?,?,?,?)"; 
 	private final static String DELETE_SHOPCART_GOODSID = "DELETE FROM T_SHOPCART WHERE ID = ?";
-	private final static String SELECT_SHOPCART = "SELECT * FROM SHOPCART WHERE USERID = ?";
-	private final static String SELECT_ALL_SHOPCART = "SELECT * FROM SHOPCART";
+	private final static String SELECT_SHOPCART = "SELECT * FROM T_SHOPCART WHERE USERID = ?";
+	private final static String SELECT_ALL_SHOPCART = "SELECT * FROM T_SHOPCART";
 	
 	Connection connection = null;
 	public ShopCartDaoImpl(Connection connection) {
@@ -36,6 +36,8 @@ public class ShopCartDaoImpl implements ShopCartDao {
 			pstmt = connection.prepareStatement(INSERT_SHOPCART_GOODSID);
 			pstmt.setInt(1,shopCart.getGoodsId());
 			pstmt.setInt(2, shopCart.getUserId());
+			pstmt.setString(3,shopCart.getName());
+			pstmt.setString(4,shopCart.getPrice());
 			if(pstmt.executeUpdate()!=0)
 			{
 				return true;
@@ -90,7 +92,7 @@ public class ShopCartDaoImpl implements ShopCartDao {
 				pstmt = connection.prepareStatement(SELECT_SHOPCART);
 				pstmt.setInt(1, userId);
 				rs = pstmt.executeQuery();
-				if(rs.next())
+				while(rs.next())
 				{
 					ShopCart  shopCart = new ShopCart();
 					shopCart.setId(rs.getInt("ID"));
@@ -123,7 +125,7 @@ public class ShopCartDaoImpl implements ShopCartDao {
 
 			pstmt = connection.prepareStatement(SELECT_ALL_SHOPCART);
 			rs = pstmt.executeQuery();
-			if(rs.next())
+			while(rs.next())
 			{
 				ShopCart  shopCart = new ShopCart();
 				shopCart.setId(rs.getInt("ID"));

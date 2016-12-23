@@ -29,12 +29,12 @@ public class OrderDaoImpl implements OrderDao{
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = connection.prepareStatement(INSERT_ORDER);
-			pstmt.setString(1, "ADDRESS");
-			pstmt.setInt(2,Integer.parseInt("GOODSID"));
-			pstmt.setString(3, "STATUS");
-			pstmt.setString(4, "USERNAME");
-			pstmt.setString(5, "COMMITTIME");
-			pstmt.setString(6, "REALNAME");
+			pstmt.setString(1, order.getAddress());
+			pstmt.setInt(2,order.getGoodsId());
+			pstmt.setString(3,order.getStatus());
+			pstmt.setString(4, order.getUsername());
+			pstmt.setString(5, order.getCommitTime());
+			pstmt.setString(6, order.getRealname());
 
 			if(pstmt.executeUpdate()!=0)
 			{

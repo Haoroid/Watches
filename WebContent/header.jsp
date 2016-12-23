@@ -55,10 +55,10 @@
 			<div class="header">
 				<div class="col-md-9 header-left">
 				<div class="top-nav">
-					<ul class="memenu skyblue"><li class="active"><a href="index.jsp">首页</a></li>
-						<li class="grid"><a href="products.jsp">男士</a></li>
-						<li class="grid"><a href="#">女士</a></li>
-						<li class="grid"><a href="#">儿童</a></li>
+					<ul class="memenu skyblue"><li class="active"><a href="goods/showAllGoods">首页</a></li>
+						<li class="grid"><a href="goods/categoryGoods?tag=man">男士</a></li>
+						<li class="grid"><a href="goods/categoryGoods?tag=woman">女士</a></li>
+						<li class="grid"><a href="goods/categoryGoods?tag=child">儿童</a></li>
 						<li class="grid"><a href="typo.jsp">Blog</a></li>
 						<li class="grid"><a href="contact.jsp">联系我们</a>
 						</li>

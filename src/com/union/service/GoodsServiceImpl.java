@@ -78,8 +78,23 @@ public class GoodsServiceImpl implements GoodsService {
 
 	@Override
 	public List<Goods> categoryGoods(Serializable tag) {
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = null;
+		List<Goods> goodsList = null;
+		try{
+		conn = DBUtils.getConnection();
+		GoodsDao goodsDao = new GoodsDaoImpl(conn);
+		DBUtils.beginTransaction(conn);
+		goodsList = goodsDao.categoryGoods(tag);
+		DBUtils.commit(conn);
+		}catch(SQLException e)
+		{
+			DBUtils.rollback(conn);
+			
+		}finally
+		{
+			DBUtils.closeConnection(conn);
+		}
+		return goodsList;
 	}
 
 }

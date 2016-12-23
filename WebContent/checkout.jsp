@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme() +"://" + request.getServerName()+":" + request.getServerPort()+"/"+path+"/";
+%>
 <!DOCTYPE html>
+
 <html>
 <head>
+<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -80,17 +87,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li> </li>
 					<div class="clearfix"> </div>
 				</ul>
+				<c:forEach var="shopCart" items="${shopCartList }">
 				<ul class="cart-header">
 					<div class="close1"> </div>
 						<li class="ring-in"><a href="single.html" ><img src="images/c-1.jpg" class="img-responsive" alt=""></a>
 						</li>
-						<li><span class="name">Analog Watches</span></li>
-						<li><span class="cost">$ 290.00</span></li>
-						<li><span>Free</span>
+						<li><span class="name">${shopCart.name}</span></li>
+						<li><span class="cost">${shopCart.price}</span></li>
+						<a href="order/commitOrder?goodsId=${shopCart.goodsId }"><li><span>提交订单</span></a>
 						<p>Delivered in 2-3 business days</p></li>
 					<div class="clearfix"> </div>
 				</ul>
-				<ul class=" cart-header1">
+				</c:forEach>
+				<!-- <ul class=" cart-header1">
 					<div class="close2"> </div>
 						<li class="ring-in"><a href="single.html" ><img src="images/c-2.jpg" class="img-responsive" alt=""></a>
 						</li>
@@ -109,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><span>Free</span>
 						<p>Delivered in 2-3 business days</p></li>
 						<div class="clearfix"> </div>
-				</ul>
+				</ul> -->
 			</div>
 			</div>  
 		 </div>

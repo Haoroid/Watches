@@ -26,4 +26,10 @@ public interface GoodsDao {
 	 * @return
 	 */
 	List<Goods> searchGoods(Serializable tag) throws SQLException;
+	/**
+	 * 通过tag标识进行商品分类
+	 * @param tag
+	 * @return
+	 */
+	List<Goods> categoryGoods(Serializable tag);
 }

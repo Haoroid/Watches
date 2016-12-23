@@ -147,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li><span>SKU</span>
 								<span class="women1">: CK09</span></li>
 							</ul>
-								<a href="#" class="add-cart item_add">ADD TO CART</a>
+								<a href="shopCart/addShopCart?goodsId=${goods.id }&name=${goods.name}" class="add-cart item_add">ADD TO CART</a>
 							
 						</div>
 					</div>
